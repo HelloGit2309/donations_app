@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/widgets/dashboard.dart';
 import 'package:provider/provider.dart';
 import '../widgets/products_grid.dart';
 import '../providers/products.dart';
+import '../widgets/dashboard.dart';
 
 enum FilterOptions {
   Favorites,
@@ -45,12 +47,12 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //drawer: AppDrawer(),
-      body: _isLoading
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : ProductsGrid(_showOnlyFavorites),
-    );
+        //drawer: AppDrawer(),
+        body: _isLoading
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : Dashboard(),
+        );
   }
 }
